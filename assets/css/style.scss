@@ -1,0 +1,23 @@
+@import 'fonts';
+@import 'variables/colors';
+@import 'header';
+@import 'footer';
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'ralewayregular';
+    font-size: 1em;
+}
+
+h1 {
+    font-family: 'montserratbold';
+    font-size: 1.5em;
+}
+
+
+.logo {
+    width: 185px;
+} 

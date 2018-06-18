@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'ralewayregular';
+  src: url("../fonts/raleway-regular-webfont.woff2") format("woff2"), url("../fonts/raleway-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'montserratbold';
+  src: url("../fonts/montserrat-bold-webfont.woff2") format("woff2"), url("../fonts/montserrat-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.page-header {
+  margin: 0;
+  padding: 0;
+  background-color: #141534;
+  width: 100%;
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+.page-header h1 {
+  font-family: 'montserratbold';
+}
+
+.page-header h1 small {
+  color: #fff;
+}
+
+.page-header .nav {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.page-header .header-title-group {
+  display: inline-block;
+}
+
+.page-header .header-font-button {
+  display: inline-block;
+}
+
+.footer {
+  overflow: auto;
+  height: 50px;
+  width: 100%;
+}
+
+.footer p {
+  margin: 10px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'ralewayregular';
+  font-size: 1em;
+}
+
+h1 {
+  font-family: 'montserratbold';
+  font-size: 1.5em;
+}
+
+.logo {
+  width: 185px;
+}
+/*# sourceMappingURL=style.css.map */
