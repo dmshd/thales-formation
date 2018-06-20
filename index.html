@@ -40,108 +40,37 @@
     <div class="row">
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md-3"
+          <div class="col-md-3">
             <nav>
               <ul class="nav">
                 <li>
-                  <a href="#">Lien 1</a>
+                  <a href="#" id="1" class="videoControlButton" >1. Préparer 10mm de fil</a>
                 </li>
                 <li>
-                  <a href="#" id="btn-1" data-toggle="collapse" data-target="#submenu1" aria-expanded="false">Lien 2 (déroulant)</a>
-                  <ul class="nav collapse" id="submenu1" role="menu" aria-labelledby="btn-1">
-                    <li>
-                      <a href="#">Lien 2.1</a>
-                    </li>
-                    <li>
-                      <a href="#">Lien 2.2</a>
-                    </li>
-                    <li>
-                      <a href="#">Lien 2.3</a>
-                    </li>
-                  </ul>
+                  <a href="#" id="2" class="videoControlButton"> 2. Procéder à la brasure du composant</a>
                 </li>
                 <li>
-                  <a href="#">Lien 3</a>
+                  <a href="#" id="3" class="videoControlButton">3. Procéder au nettoyage</a>
                 </li>
                 <li>
-                  <a href="#">Lien 4</a>
+                  <a href="#" id="4" class="videoControlButton">4. Souffler</a>
                 </li>
               </ul>
             </nav>
           </div>
-          <div class="col-md-6">
-            <nav>
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="#">Home</a>
-                </li>
-                <li class="breadcrumb-item">
-                  <a href="#">Library</a>
-                </li>
-                <li class="breadcrumb-item active">
-                  Data
-                </li>
-              </ol>
-            </nav>
-            <h1>Bienvenue sur la plateforme d'aide à l'apprentissage des procédures Thales</h1>
-            <div class="jumbotron">
-              <h2>
-                Hello, world!
-              </h2>
-              <p>
-               Cliquez ici pour commencer
-              </p>
-              <p>
-                <a class="btn btn-primary btn-large" href="#">Commencer</a>
-              </p>
+          <div class="col-md-6 strict-max-height">
+            <div class="well">
+              <!-- 16:9 aspect ratio -->
+              <div class="embed-responsive embed-responsive-16by9">
+                <video id="demovideo" width="640" height="480" src="assets/videos/IMG_0673.MOV" controls></video>
+              </div>
             </div>
             <div class="well">
               <!-- 16:9 aspect ratio -->
               <div class="embed-responsive embed-responsive-16by9">
-                <video width="640" height="480" src="http://daniel.muyshond.be/thales/IMG_0673.MOV" controls></video>
+                <video width="640" height="480" src="assets/videos/IMG_0673.MOV" controls></video>
               </div>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, labore tempora. Obcaecati dolorum cupiditate, autem quia
-              delectus porro. Fuga consequuntur maiores quaerat odio aut quibusdam culpa quos non commodi libero! Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Dicta dignissimos, mollitia aliquam, enim harum praesentium repellat,
-              nostrum vel iste molestias alias voluptate? Corporis, nobis repellendus accusamus adipisci magnam quaerat labore.
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. In soluta porro qui, non quas, nisi sint quos ipsa
-              ut culpa ab, minus repellendus dignissimos accusantium? Quis in libero placeat mollitia!
-
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi explicabo odio, sapiente, assumenda molestiae et voluptas
-              itaque alias ea nam voluptatem eligendi, obcaecati corrupti sit hic unde! Nisi, nesciunt ducimus. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Reiciendis laborum necessitatibus amet quidem nam alias totam
-              eveniet, cupiditate, ab nisi veritatis? Pariatur natus modi hic libero blanditiis vero aut explicabo?
-            </p>
-            <nav>
-              <ul class="pagination">
-                <li class="page-item">
-                  <a class="page-link" href="#">Previous</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">4</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">5</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Next</a>
-                </li>
-              </ul>
-            </nav>
           </div>
           <div class="col-md-3">
             <div class="well">
@@ -166,6 +95,7 @@
       2018 Thales Group
     </p>
   </footer>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
