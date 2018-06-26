@@ -1,6 +1,4 @@
-.page-header {
-    // overflow: hidden;
-    // position: fixed;    
+.page-header {  
     margin: 0;
     padding: 0;
     background-color: $header-bgcolor;
@@ -9,24 +7,10 @@
     margin-bottom: 20px;
     .logo {
         width: 185px;
-    } 
-    h1 {
-        margin-top: 0;
-        font-family: 'montserratbold';
-        small {
-            
-            color: $blanc;
-        }
-    }
-    .nav {
-        margin-top: 20px;
-        margin-bottom: 20px;
     }
     .header-title-group {
-        display: inline-block;
-    }
-    .header-font-button {
-        display: inline-block;
+        padding-top: 10px;
+        padding-bottom: 3px;
     }
 }
 

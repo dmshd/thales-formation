@@ -1,0 +1,24 @@
+[{
+    "id" : 1,
+    "dsc" : "Préparer 10mm de fil",
+    "start" : 0.0,
+    "end" : 12.0
+},
+{
+    "id" : 2,
+    "dsc" : "Procéder à la brasure du composant",
+    "start" : 12,
+    "end" : 27
+},
+{
+    "id" : 3,
+    "dsc" : "Procéder au nettoyage",
+    "start" : 27,
+    "end" : "demoVideoDuration"
+},
+{
+    "id" : 3,
+    "dsc" : "3. Procéder au nettoyage",
+    "start" : 27,
+    "end" : "demoVideoDuration"
+}]

@@ -15,7 +15,6 @@
 <body>
   <div class="page-header">
     <div class="header-title-group">
-      <h1>
         <svg width="185" viewBox="0 0 1024 121" enable-background="new 0 0 1024 121">
           <path fill="#FFFFFF" d="M1024,88.814c0,16.441-4.788,21.286-17.913,25.236c-14.218,4.298-39.467,6.95-54.497,6.95 c-17.784,0-39.943-1.15-58.851-5.477V96.524h104.327V70.701h-73.841c-22.196,0-30.468-6.092-30.468-27.715V31.695 c0-17.045,5.052-22.194,18.934-25.764C925.651,2.328,948.524,0,963.464,0c18.127,0,39.918,1.408,58.883,5.596V24.61H919.698v21.839 h73.84c22.203,0,30.462,5.973,30.462,27.592V88.814z"></path>
           <path fill="#FFFFFF" d="M846.059,115.551c-21.623,4.286-43.388,5.448-64.476,5.448c-21.075,0-43.253-1.163-64.877-5.448V5.595 C738.33,1.316,760.236,0,781.324,0c21.082,0,42.595,1.316,64.225,5.596v19.621h-97.703v21.968h63.625v22.81h-63.625v25.949h98.213 V115.551z"></path>
@@ -32,17 +31,15 @@
           <path fill="#FFFFFF" d="M323.111,116.372c-9.946,2.85-20.57,3.893-31.151,4.078V71.157h-77.359v49.293 c-10.583-0.185-21.201-1.229-31.136-4.078V4.898c9.935-2.85,20.552-3.893,31.136-4.078v47.564h77.359V0.82 c10.581,0.185,21.198,1.228,31.151,4.078V116.372z"></path>
           <path fill="#FFFFFF" d="M140.087,25.502H85.454v92.965H54.627V25.502H0V5.658C23.52,1.392,47.149,0.06,70.121,0.06 c22.934,0,46.491,1.332,69.966,5.599V25.502z"></path>
         </svg>
-        <small>Formation</small>
-      </h1>
     </div>
   </div>
   <div class="container-fluid mainContainer">
     <div class="row">
       <div class="col-md-12">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3" id="colonne-gauche">
             <nav>
-              <ul class="nav">
+              <ul class="nav" id="menu-gauche"> 
                 <li>
                   <a href="#" id="1" class="videoControlButton" >1. Préparer 10mm de fil</a>
                 </li>
@@ -58,21 +55,22 @@
               </ul>
             </nav>
           </div>
-          <div class="col-md-6 strict-max-height">
-            <div class="well">
-              <!-- 16:9 aspect ratio -->
+          <div class="col-md-9 strict-max-height">
+            <div class="well" id="central-video">
               <div class="embed-responsive embed-responsive-16by9">
-                <video id="demovideo" width="640" height="480" src="assets/videos/IMG_0673.MOV" controls></video>
+                <video id="demovideofrm" class="embed-responsive-item" src="assets/videos/IMG_0673.MOV" controls="true"></video>
+                <video id="livevideofrm" class="embed-responsive-item"></video> 
+                <video id="recvideofrm" class="embed-responsive-item" controls="true"></video>
+                <object id="central-doc-pdfobject" class="embed-responsive-item" data="assets/docs/MOG-CAB-0001-04-00.pdf" type="application/pdf" internalinstanceid="9" title="">
+                  <p>Your browser isn't supporting embedded pdf files. You can download the file
+                      <a href="assets/docs/MOG-CAB-0001-04-00.pdf" >here</a>.</p>
+                </object>
               </div>
             </div>
-            <div class="well">
-              <!-- 16:9 aspect ratio -->
-              <div class="embed-responsive embed-responsive-16by9">
-                <video width="640" height="480" src="assets/videos/IMG_0673.MOV" controls></video>
-              </div>
-            </div>
+             <!-- Recording function -->
+             <p><button id="recbtn">Enregistrer une vidéo</button><button id="startbtn">Start</button><button id="stopbtn">Stop</button><button id="revenirbtn">Revenir à la démonstration</button><button id="mogbtn">MOG</button><button id="qf101btn">QF101</button></p>
           </div>
-          <div class="col-md-3">
+          <!-- <div class="col-md-3">
             <div class="well">
               <h4>MOGs</h4>
               <p>
@@ -85,7 +83,7 @@
                 <p>
                 </p>
               </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -95,7 +93,9 @@
       2018 Thales Group
     </p>
   </footer>
+  <script type="text/javascript" src="assets/json/sequence_info.json"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/mediarecorder.js"></script>
 </body>
 
 </html>
