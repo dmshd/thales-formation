@@ -56,6 +56,11 @@ body {
   font-size: 1em;
 }
 
+.vh-100 {
+  height: 100vh;
+  min-height: 100vh;
+}
+
 .thales-title {
   font-family: "montserratbold";
   font-size: 18px;

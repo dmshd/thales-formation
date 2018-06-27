@@ -9,7 +9,7 @@
 // MediaRecorder.start -> start recording
 // MediaRecorder.stop -> stop recording (this will generate a blob of data)
 // URL.createObjectURL -> to create a URL from a blob, which we use as video src
-let video = $("#recvideofrm");
+let video = $("#demovideofrm");
 let videoElement = video.get(0);
 var recordButton, stopButton, recorder, liveStream;
 
@@ -120,6 +120,7 @@ $( "#revenirbtn" ).click(function() {
 
 //
 $( "#mogbtn" ).click(function() {
+  videoElement.pause();
   $("#recbtn").show(); // Fais apparaitre le boutton "Enregistrer"
   $("#revenirbtn").show(); // Masque le boutton "revenirbtn à la video"
   $("#startbtn").hide(); // Masque le boutton "Start"
@@ -140,6 +141,7 @@ $( "#mogbtn" ).click(function() {
 });
 
 $( "#qf101btn" ).click(function() {
+  videoElement.pause();
   $("#recbtn").show(); 
   $("#revenirbtn").show(); 
   $("#startbtn").hide(); 

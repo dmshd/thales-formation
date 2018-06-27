@@ -12,6 +12,11 @@ body {
     font-size: 1em;
 }
 
+.vh-100 {
+    height: 100vh;
+    min-height:100vh;
+}
+
 .thales-title {
     font-family: $font-titre;
     font-size: 18px;
