@@ -8,14 +8,27 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'ralewayregular';
+    font-family: $font-text;
     font-size: 1em;
 }
 
-// .well {
-//     padding: 0;
-//     border-radius: 10px;
-// }
+.thales-title {
+    font-family: $font-titre;
+    font-size: 18px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.chapter-title {
+    font-family: $font-titre;
+    font-size: 25px;
+    margin-left: 30px;
+}
+
+.mode-operatoire-title {
+    font-size: 22px;
+}
+
 #central-video {
     padding: 0;
     margin: 0;
@@ -24,4 +37,50 @@ body {
 video::-webkit-media-controls-panel {
     display: flex !important;
     opacity: 1 !important;
+}
+
+button {
+    border: 1px solid $button-color;
+    background-color: $button-color;
+    margin-right: 5px;
+    color: $blanc;
+    padding: 10px 20px 10px 20px;
+    transition: background-color 80ms linear;
+    &:hover {
+        background-color: #edf1f4;
+        border: 1px solid $button-color;
+        color: $button-color;
+        transition: background-color 80ms linear;
+    }
+    &:active {
+        background-color: #9c9fa6;
+    }
+}
+
+#menu-gauche {
+    li {
+        border: 1px solid $button-color;
+        background-color: $button-color;
+        margin-right: 5px;
+        color: $blanc;
+        padding: 5px 10px 5px 10px;
+        margin-bottom: 5px;
+        transition: background-color 500ms linear;
+        &:hover {
+            background-color: #edf1f4;
+            border: 1px solid $button-border;
+            transition: background-color 60ms linear;
+        }
+        &:active {
+            background-color: #9c9fa6;
+            color: $button-color;
+        }
+        a {
+            background-color: transparent;
+            color: $blanc;
+            &:hover {
+                color: $button-color;
+            }
+        }
+    }
 }

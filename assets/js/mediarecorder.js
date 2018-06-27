@@ -9,12 +9,13 @@
 // MediaRecorder.start -> start recording
 // MediaRecorder.stop -> stop recording (this will generate a blob of data)
 // URL.createObjectURL -> to create a URL from a blob, which we use as video src
-
+let video = $("#recvideofrm");
+let videoElement = video.get(0);
 var recordButton, stopButton, recorder, liveStream;
 
 window.onload = function () {
 
-  let videoParameters = { audio: true, video: { width: 1280, height: 720 } };
+  let videoParameters = { audio: false, video: { width: 1280, height: 720 } };
 
   // doc frame
   $("#central-doc-pdfobject").hide();
@@ -82,6 +83,7 @@ $( "#recbtn" ).click(function() {
   $("#demovideofrm").hide(); // Masque la video de cours
   $("#recvideofrm").hide(); // Masque la video enregistree
   $("#livevideofrm").show(); // Fais appartaitre le live preview (avant l'enregistrement);
+  $("#central-doc-pdfobject").hide();
 });
 
 // onClick Start button 
@@ -127,6 +129,14 @@ $( "#mogbtn" ).click(function() {
   $("#recvideofrm").hide();
   $("#demovideofrm").hide();
   $("#central-doc-pdfobject").show();
+
+  
+  // if (!videoElement.paused) {
+  //   console.log("paused");
+  // }else {
+  //   console.log("running");
+  // }
+
 });
 
 $( "#qf101btn" ).click(function() {

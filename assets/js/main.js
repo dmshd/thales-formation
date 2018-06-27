@@ -41,20 +41,26 @@ let videoControlButtons = document.querySelectorAll(".videoControlButton");
 
 //Définition des "blocs" de video
 let bloc1 = {
-    dsc: "1. Préparer 10mm de fil",
+    dsc: "1. Mesure de l'entraxe",
     start: 0.0,
-    end: 12.0
+    end: 9
 };
 
 let bloc2 = {
-    dsc: "2. Procéder à la brasure du composant",
-    start: 12,
-    end: 27
+    dsc: "2. Reporter la valeur sur la réglette de formage",
+    start: 9,
+    end: 25
 };
 
 let bloc3 = {
-    dsc: "3. Procéder au nettoyage",
-    start: 27,
+    dsc: "3. Mise en forme du compasant",
+    start: 36,
+    end: 52
+};
+
+let bloc4 = {
+    dsc: "4. Vérification de l'axe et test",
+    start: 53,
     end: demoVideoDuration
 };
 
@@ -67,6 +73,18 @@ for (let i=0; i < vcbLength; i++) {
     videoControlButtons[i].addEventListener("click", function (event){
 
     event.preventDefault();
+
+    if ($("#demovideofrm").is(":hidden")) {
+        if ($("#livevideofrm").is(":visible")) {
+            $("#livevideofrm").hide();
+        }else if ($("#recvideofrm").is(":visible")) {
+            $("#recvideofrm").hide();
+        }else if ($("#central-doc-pdfobject").is(":visible")) {
+            $("#central-doc-pdfobject").hide();
+        }
+        $("#demovideofrm").show();
+    }
+
     switch (this.id) {
         case "1":
         startCursor = bloc1.start;
@@ -79,6 +97,10 @@ for (let i=0; i < vcbLength; i++) {
         case "3":
         startCursor = bloc3.start;
         endCursor = bloc3.end;
+        break;
+        case "4":
+        startCursor = bloc4.start;
+        endCursor = bloc4.end;
         break;
     }
 
