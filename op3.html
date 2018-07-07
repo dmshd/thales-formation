@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Thales Learning Hub</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="page-header">
+    <div class="header-title-group">
+      <svg width="185" viewBox="0 0 1024 121" enable-background="new 0 0 1024 121">
+        <path fill="#FFFFFF" d="M1024,88.814c0,16.441-4.788,21.286-17.913,25.236c-14.218,4.298-39.467,6.95-54.497,6.95 c-17.784,0-39.943-1.15-58.851-5.477V96.524h104.327V70.701h-73.841c-22.196,0-30.468-6.092-30.468-27.715V31.695 c0-17.045,5.052-22.194,18.934-25.764C925.651,2.328,948.524,0,963.464,0c18.127,0,39.918,1.408,58.883,5.596V24.61H919.698v21.839 h73.84c22.203,0,30.462,5.973,30.462,27.592V88.814z"></path>
+        <path fill="#FFFFFF" d="M846.059,115.551c-21.623,4.286-43.388,5.448-64.476,5.448c-21.075,0-43.253-1.163-64.877-5.448V5.595 C738.33,1.316,760.236,0,781.324,0c21.082,0,42.595,1.316,64.225,5.596v19.621h-97.703v21.968h63.625v22.81h-63.625v25.949h98.213 V115.551z"></path>
+        <path fill="#FFFFFF" d="M679.416,115.551C660.01,119.85,640.44,121,621.637,121c-18.805,0-38.765-1.15-58.161-5.448V2.739h31.139 v91.749h84.802V115.551z"></path>
+        <path fill="#FFFFFF" d="M526.129,116.246c-10.373,2.972-24.081,4.028-34.286,4.201l-47.955-96.619h-2.678l-47.934,96.619 c-10.233-0.173-22.263-1.229-32.629-4.201L421.369,2.787h43.285L526.129,116.246z"></path>
+        <path fill="#342356" d="M462.868,87.416c0,11.094-9.166,20.102-20.294,20.102c-11.145,0-20.149-9.021-20.149-20.102 c0-11.094,9.03-20.108,20.149-20.108C453.684,67.308,462.868,76.291,462.868,87.416"></path>
+        <path fill="#FFFFFF" d="M323.111,116.372c-9.946,2.85-20.57,3.893-31.151,4.078V71.157h-77.359v49.293 c-10.583-0.185-21.201-1.229-31.136-4.078V4.898c9.935-2.85,20.552-3.893,31.136-4.078v47.564h77.359V0.82 c10.581,0.185,21.198,1.228,31.151,4.078V116.372z"></path>
+        <path fill="#FFFFFF" d="M140.087,25.502H85.454v92.965H54.627V25.502H0V5.658C23.52,1.392,47.149,0.06,70.121,0.06 c22.934,0,46.491,1.332,69.966,5.599V25.502z"></path>
+        <path fill="#FFFFFF" d="M1024,88.814c0,16.441-4.788,21.286-17.913,25.236c-14.218,4.298-39.467,6.95-54.497,6.95 c-17.784,0-39.943-1.15-58.851-5.477V96.524h104.327V70.701h-73.841c-22.196,0-30.468-6.092-30.468-27.715V31.695 c0-17.045,5.052-22.194,18.934-25.764C925.651,2.328,948.524,0,963.464,0c18.127,0,39.918,1.408,58.883,5.596V24.61H919.698v21.839 h73.84c22.203,0,30.462,5.973,30.462,27.592V88.814z"></path>
+        <path fill="#FFFFFF" d="M846.059,115.551c-21.623,4.286-43.388,5.448-64.476,5.448c-21.075,0-43.253-1.163-64.877-5.448V5.595 C738.33,1.316,760.236,0,781.324,0c21.082,0,42.595,1.316,64.225,5.596v19.621h-97.703v21.968h63.625v22.81h-63.625v25.949h98.213 V115.551z"></path>
+        <path fill="#FFFFFF" d="M679.416,115.551C660.01,119.85,640.44,121,621.637,121c-18.805,0-38.765-1.15-58.161-5.448V2.739h31.139 v91.749h84.802V115.551z"></path>
+        <path fill="#FFFFFF" d="M526.129,116.246c-10.373,2.972-24.081,4.028-34.286,4.201l-47.955-96.619h-2.678l-47.934,96.619 c-10.233-0.173-22.263-1.229-32.629-4.201L421.369,2.787h43.285L526.129,116.246z"></path>
+        <path fill="#00B2D7" d="M462.868,87.416c0,11.094-9.166,20.102-20.294,20.102c-11.145,0-20.149-9.021-20.149-20.102 c0-11.094,9.03-20.108,20.149-20.108C453.684,67.308,462.868,76.291,462.868,87.416"></path>
+        <path fill="#FFFFFF" d="M323.111,116.372c-9.946,2.85-20.57,3.893-31.151,4.078V71.157h-77.359v49.293 c-10.583-0.185-21.201-1.229-31.136-4.078V4.898c9.935-2.85,20.552-3.893,31.136-4.078v47.564h77.359V0.82 c10.581,0.185,21.198,1.228,31.151,4.078V116.372z"></path>
+        <path fill="#FFFFFF" d="M140.087,25.502H85.454v92.965H54.627V25.502H0V5.658C23.52,1.392,47.149,0.06,70.121,0.06 c22.934,0,46.491,1.332,69.966,5.599V25.502z"></path>
+      </svg>
+      <small>Learning hub</small>
+    </div>
+  </div>
+  <div class="container-fluid mainContainer">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+
+          <div class="col-md-3" id="colonne-gauche">
+            <div class="well">
+              <nav>
+                <h4 class="thales-title mode-operatoire-title">Mode opératoire</h4>
+                <ul class="nav" id="menu-gauche">
+                  <li>
+                    <a href="#" id="1" class="videoControlButton">1. Nettoyer la connexion à l'
+                      <abbr title="Alcool Isopropylique">AIP</abbr> si nécessaire</a>
+                  </li>
+                  <li>
+                    <a href="#" id="2" class="videoControlButton">2. Sécher à l'air comprimé ou à l'azote</a>
+                  </li>
+                  <li>
+                    <a href="#" id="3" class="videoControlButton">3. Déposer le flux sur la connexion suivant MOG-xxx</a>
+                  </li>
+                  <li>
+                    <a href="#" id="4" class="videoControlButton">4. Nettoyer la panne du fer sur une éponge humide</a>
+                  </li>
+                  <li>
+                    <a href="#" id="5" class="videoControlButton">5. Déposer la panne du fer sur la pastille (côté brasures pour les piqués et les fils !).</a>
+                  </li>
+                  <li>
+                      <a href="#" id="6" class="videoControlButton">6. Laisser  chauffer  puis  faire  l’appoint  de  brasure  en
+                          déplaçant  le  fil  de  brasure  autour  de  la 
+                        connexion    jusqu’à  avoir  un  ménisque  correct  répond
+                        ant  aux  exigences  de  la  QFxxxx.</a>
+                  </li>
+                  <li>
+                      <a href="#" id="7" class="videoControlButton">7. Retirer le fil de brasure et la panne simultanément
+                          avec un angle de 45°. </a>
+                  </li>
+                  <li>
+                      <a href="#" id="8" class="videoControlButton">8. Laisser refroidir. </a>
+                  </li>
+                  <li>
+                      <a href="#" id="9" class="videoControlButton">9. Nettoyer suivant MOG-xxx. </a>
+                  </li>
+                  
+                </ul>
+              </nav>
+            </div>
+            <div class="well">
+              <a href="index.html">
+                <button href="index.html" style="width: 100%">Table des matières</button>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 strict-max-height">
+            <h1 class="chapter-title">Réalisation de brasure sur composants axiaux</h1>
+            <div class="well" id="central-video">
+              <div class="embed-responsive embed-responsive-16by9">
+                <video id="demovideofrm" class="embed-responsive-item" src="assets/videos/op3-report_de_composants_axiaux.mp4" controls="true"
+                  preload="auto">
+                  <track label="Sous-titre français" kind="subtitles" srclang="fr" src="sous-titres/op1-subs.vtt" default>
+                </video>
+                <video id="livevideofrm" class="embed-responsive-item"></video>
+                <video id="recvideofrm" class="embed-responsive-item" controls="true"></video>
+                <object rel="preload" id="central-doc-pdfobject" class="embed-responsive-item" data="assets/MOGs/MOG-op3-réalisation_de_brasure_sur_composant_piqué.pdf#zoom=100"
+                  type="application/pdf" internalinstanceid="9" title="">
+                  <p>Your browser isn't supporting embedded pdf files. You can download the file
+                    <a href="assets/MOGs/MOG-op3-réalisation_de_brasure_sur_composant_piqué.pdf">here</a>.</p>
+                </object>
+                <object rel="preload" id="central-doc-pdfobject2" class="embed-responsive-item" data="assets/MOGs/MOG-op3-utilisation_des_flux_de_brasage.pdf#zoom=100"
+                  type="application/pdf" internalinstanceid="9" title="">
+                  <p>Your browser isn't supporting embedded pdf files. You can download the file
+                    <a href="assets/MOGs/MOG-op3-utilisation_des_flux_de_brasage.pdf">here</a>.</p>
+                </object>
+                <object rel="preload" id="central-qf101-pdfobject" class="embed-responsive-item" data="assets/QF101/QF101-op3-réalisation_de_brasure_sur_composants_piqués.pdf#zoom=100"
+                  type="application/pdf" internalinstanceid="9" title="">
+                  <p>Your browser isn't supporting embedded pdf files. You can download the file
+                    <a href="assets/QF101/QF101-op3-réalisation_de_brasure_sur_composants_piqués.pdf">here</a>.</p>
+                </object>
+                <!-- Cercle rouge indicateur d'enregistrement ( masqué par défaut. Affiché uniquement quand on clique sur Start, masqué quand on clique sur Stop) -->
+                <svg height="100" width="100" class="blinking">
+                    <circle cx="50" cy="50" r="10" fill="red" />
+                    Sorry, your browser does not support inline SVG.  
+                </svg> 
+              </div>
+            </div>
+            <p>
+              <a href="index.html">
+                <button href="index.html">Table des matières</button>
+              </a>
+              <button id="recbtn">Enregistrer une vidéo</button>
+              <button id="startbtn">Start</button>
+              <button id="stopbtn">Stop</button>
+              <button id="revenirbtn">Revenir à la démonstration</button>
+              <button id="revoirbtn">Revoir l'enregistrement</button>
+            </p>
+          </div>
+
+          <div class="col-md-3">
+
+            <div class="well">
+              <h4 class="thales-title">MOGs</h4>
+              <p>
+                <button id="mogbtn">Réalisation de brasure sur composant piqué</button>
+              </p>
+              <p>
+                <button id="mogbtn2">Utilisation des flux de brasage</button>
+              </p>
+            </div>
+            <div class="well">
+              <h4 class="thales-title">QF101</h4>
+              <p>
+                <button id="qf101btn">Réalisation de brasure sur composant piqué</button>
+              </p>
+            </div>
+            <!-- <div class="well">
+              <h4 class="thales-title">Matériels et moyens spécifiques</h4>
+              <ul class="list-group">
+                <li class="list-group-item">Fer à souder</li>
+                <li class="list-group-item">Binoculaire</li>
+                <li class="list-group-item">Pannes</li>
+                <li class="list-group-item">Brasures</li>
+                <li class="list-group-item">Table chauffante (optionnel)</li>
+                <li class="list-group-item">Flux</li>
+                <li class="list-group-item">Pinceau</li>
+                <li class="list-group-item">Alcool isopropylique</li>
+              </ul>
+            </div> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p class="text-center">
+      2018 Thales Group
+    </p>
+  </footer>
+  <script type="text/javascript">
+    const getVideoDuration = (video) => {
+      return video.duration;
+    }
+    let demoVideo = document.getElementById("demovideofrm");
+    const demoVideoDuration = getVideoDuration(demoVideo);
+
+    //Tous les boutons 
+    let videoControlButtons = document.querySelectorAll(".videoControlButton");
+
+    //Définition des "blocs" de video
+    let bloc1 = {
+      dsc: "1. Mesure de l'entraxe",
+      start: 0.0,
+      end: 9
+    };
+
+    let bloc2 = {
+      dsc: "2. Reporter la valeur sur la réglette de formage",
+      start: 9,
+      end: 25
+    };
+
+    let bloc3 = {
+      dsc: "3. Mise en forme du compasant",
+      start: 36,
+      end: 52
+    };
+
+    let bloc4 = {
+      dsc: "4. Vérification de l'axe et test",
+      start: 53,
+      end: demoVideoDuration
+    };
+
+    // Menu addEventListeners
+    let startCursor, endCursor;
+
+    let vcbLength = videoControlButtons.length;
+    for (let i = 0; i < vcbLength; i++) {
+      videoControlButtons[i].addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        if ($("#demovideofrm").is(":hidden")) {
+          if ($("#livevideofrm").is(":visible")) {
+            $("#livevideofrm").hide();
+          } else if ($("#recvideofrm").is(":visible")) {
+            $("#recvideofrm").hide();
+          } else if ($("#central-doc-pdfobject").is(":visible")) {
+            $("#central-doc-pdfobject").hide();
+          } else if ($("#central-doc-pdfobject2").is(":visible")) {
+            $("#central-doc-pdfobject2").hide();
+          }
+
+          $("#demovideofrm").show();
+        }
+
+        switch (this.id) {
+          case "1":
+            startCursor = bloc1.start;
+            endCursor = bloc1.end;
+            break;
+          case "2":
+            startCursor = bloc2.start;
+            endCursor = bloc2.end;
+            break;
+          case "3":
+            startCursor = bloc3.start;
+            endCursor = bloc3.end;
+            break;
+          case "4":
+            startCursor = bloc4.start;
+            endCursor = bloc4.end;
+            break;
+        }
+
+        demoVideo.currentTime = startCursor;
+        demoVideo.play();
+      });
+    };
+  </script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/mediarecorder.js"></script>
+</body>
+
+</html>

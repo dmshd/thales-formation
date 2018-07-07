@@ -40,30 +40,26 @@
         <div class="row">
 
           <div class="col-md-3" id="colonne-gauche">
-            
+
             <div class="well">
               <nav>
                 <h4 class="thales-title mode-operatoire-title">Mode opératoire</h4>
                 <ul class="nav" id="menu-gauche">
                   <li>
-                    <a href="#" id="1" class="videoControlButton">1. Mesurer de l'entraxe</a>
+                    <a href="#" id="1" class="videoControlButton">1. Mesure de l'entraxe <i class="video-icon"></i></a>
                   </li>
                   <li>
-                    <a href="#" id="2" class="videoControlButton"> 2. Reporter la valeur sur la réglette de formage</a>
+                    <a href="#" id="2" class="videoControlButton"> 2. Reporter la valeur sur la réglette de formage <i class="video-icon"></i></a>
                   </li>
                   <li>
-                    <a href="#" id="3" class="videoControlButton">3. Mise en forme du composant</a>
+                    <a href="#" id="3" class="videoControlButton">3. Mise en forme du composant <i class="video-icon"></i></a>
                   </li>
                   <li>
-                    <a href="#" id="4" class="videoControlButton">4. Vérifier l'axe et tester</a>
+                    <a href="#" id="4" class="videoControlButton">4. Vérifier l'axe et tester <i class="video-icon"></i></a>
                   </li>
                 </ul>
               </nav>
             </div>
-            <div class="well">
-                <a href="index.html"><button href="index.html" style="width: 100%">Table des matières</button></a>
-            </div>
-            
           </div>
 
           <div class="col-md-6 strict-max-height">
@@ -81,16 +77,26 @@
                   <p>Your browser isn't supporting embedded pdf files. You can download the file
                     <a href="assets/MOGs/MOG-op1-mise_en_forme_des_composants_axiaux.pdf">here</a>.</p>
                 </object>
+                <!-- Cercle rouge indicateur d'enregistrement ( masqué par défaut. Affiché uniquement quand on clique sur Start, masqué quand on clique sur Stop) -->
+                <svg height="100" width="100" class="blinking">
+                    <circle cx="50" cy="50" r="10" fill="red" />
+                    Sorry, your browser does not support inline SVG.  
+                </svg> 
               </div>
             </div>
             <!-- Recording function -->
             <p>
-              <div class="well">
-                <button id="recbtn">Enregistrer une vidéo</button>
+                <a href="index.html">
+                  <button href="index.html">Table des matières</button>
+                </a>
+                <button id="recbtn"><svg height="14" width="14">
+                    <circle cx="7" cy="7" r="7" fill="red" />
+                    Sorry, your browser does not support inline SVG.  
+                  </svg>   Enregistrer une vidéo</button>
                 <button id="startbtn">Start</button>
                 <button id="stopbtn">Stop</button>
                 <button id="revenirbtn">Revenir à la démonstration</button>
-              </div>
+                <button id="revoirbtn">Revoir l'enregistrement</button>
             </p>
           </div>
 
@@ -99,23 +105,8 @@
             <div class="well">
               <h4 class="thales-title">MOGs</h4>
               <p>
-                <button id="mogbtn">MOG</button>
+                <button id="mogbtn">MOG Mise en forme des composants axiaux</button>
               </p>
-            </div>
-            <div class="well">
-              <h4 class="thales-title">QF101</h4>
-              <p>
-                <button id="qf101btn">QF101</button>
-              </p>
-            </div>
-            <div class="well">
-              <h4 class="thales-title">Matériels et moyens spécifiques</h4>
-              <ul class="list-group">
-                <li class="list-group-item">Réglette de formage</li>
-                <li class="list-group-item">Pince à bouts ronds</li>
-                <li class="list-group-item">Pince à câbler</li>
-                <li class="list-group-item">Règle graduée en métal 200 mm</li>
-              </ul>
             </div>
           </div>
 
@@ -128,88 +119,92 @@
       2018 Thales Group
     </p>
   </footer>
-  <script type="text/javascript" src="assets/json/sequence_info.json"></script>
   <script type="text/javascript">
-    //Duree totale de la video
-    const getVideoDuration = (video) => {
-      return video.duration;
-    }
-    let demoVideo = document.getElementById("demovideofrm");
-    const demoVideoDuration = getVideoDuration(demoVideo);
-
-    //Tous les boutons 
-    let videoControlButtons = document.querySelectorAll(".videoControlButton");
-
-    //Définition des "blocs" de video
-    let bloc1 = {
-      dsc: "1. Mesure de l'entraxe",
-      start: 0.0,
-      end: 9
-    };
-
-    let bloc2 = {
-      dsc: "2. Reporter la valeur sur la réglette de formage",
-      start: 9,
-      end: 25
-    };
-
-    let bloc3 = {
-      dsc: "3. Mise en forme du compasant",
-      start: 36,
-      end: 52
-    };
-
-    let bloc4 = {
-      dsc: "4. Vérification de l'axe et test",
-      start: 53,
-      end: demoVideoDuration
-    };
-
-
-    // Menu addEventListeners
-    let startCursor, endCursor;
-
-    let vcbLength = videoControlButtons.length;
-    for (let i = 0; i < vcbLength; i++) {
-      videoControlButtons[i].addEventListener("click", function (event) {
-
-        event.preventDefault();
-
-        if ($("#demovideofrm").is(":hidden")) {
-          if ($("#livevideofrm").is(":visible")) {
-            $("#livevideofrm").hide();
-          } else if ($("#recvideofrm").is(":visible")) {
-            $("#recvideofrm").hide();
-          } else if ($("#central-doc-pdfobject").is(":visible")) {
-            $("#central-doc-pdfobject").hide();
+      const getVideoDuration = (video) => {
+        return video.duration;
+      }
+      let demoVideo = document.getElementById("demovideofrm");
+      const demoVideoDuration = getVideoDuration(demoVideo);
+  
+      //Tous les boutons 
+      let videoControlButtons = document.querySelectorAll(".videoControlButton");
+  
+      //Définition des "blocs" de video
+      let bloc1 = {
+        dsc: "1. Mesure de l'entraxe",
+        start: 0.0,
+        end: 9
+      };
+  
+      let bloc2 = {
+        dsc: "2. Reporter la valeur sur la réglette de formage",
+        start: 9,
+        end: 25
+      };
+  
+      let bloc3 = {
+        dsc: "3. Mise en forme du compasant",
+        start: 36,
+        end: 52
+      };
+  
+      let bloc4 = {
+        dsc: "4. Vérification de l'axe et test",
+        start: 53,
+        end: demoVideoDuration
+      };
+  
+      // Menu addEventListeners
+      let startCursor, endCursor;
+  
+      let vcbLength = videoControlButtons.length;
+      for (let i = 0; i < vcbLength; i++) {
+        videoControlButtons[i].addEventListener("click", function (event) {
+  
+          event.preventDefault();
+  
+          if ($("#demovideofrm").is(":hidden")) {
+            if ($("#livevideofrm").is(":visible")) {
+              $("#livevideofrm").hide();
+            } else if ($("#recvideofrm").is(":visible")) {
+              $("#recvideofrm").hide();
+            } else if ($("#central-doc-pdfobject").is(":visible")) {
+              $("#central-doc-pdfobject").hide();
+            } else if ($("#central-doc-pdfobject2").is(":visible")) {
+              $("#central-doc-pdfobject2").hide();
+            }
+            $("#demovideofrm").show();
           }
-          $("#demovideofrm").show();
-        }
+          if ($("#revenirbtn").is(":visible")) {
+            $("#revenirbtn").hide();
+          }
+  
+          switch (this.id) {
+            case "1":
+              startCursor = bloc1.start;
+              endCursor = bloc1.end;
+              break;
+            case "2":
+              startCursor = bloc2.start;
+              endCursor = bloc2.end;
+              break;
+            case "3":
+              startCursor = bloc3.start;
+              endCursor = bloc3.end;
+              break;
+            case "4":
+              startCursor = bloc4.start;
+              endCursor = bloc4.end;
+              break;
+          }
 
-        switch (this.id) {
-          case "1":
-            startCursor = bloc1.start;
-            endCursor = bloc1.end;
-            break;
-          case "2":
-            startCursor = bloc2.start;
-            endCursor = bloc2.end;
-            break;
-          case "3":
-            startCursor = bloc3.start;
-            endCursor = bloc3.end;
-            break;
-          case "4":
-            startCursor = bloc4.start;
-            endCursor = bloc4.end;
-            break;
-        }
+          demoVideo.currentTime = startCursor;
+          demoVideo.play();
+        });
+      };
 
-        demoVideo.currentTime = startCursor;
-        demoVideo.play();
-      });
-    };
   </script>
+  <script src="assets/js/config.js"></script>
   <script src="assets/js/mediarecorder.js"></script>
 </body>
 

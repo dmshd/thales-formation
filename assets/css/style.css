@@ -62,7 +62,7 @@ body {
 }
 
 .thales-title {
-  font-family: "montserratbold";
+  font-family: "ralewayregular";
   font-size: 18px;
   margin-left: 10px;
   font-weight: bold;
@@ -76,6 +76,7 @@ body {
 
 .mode-operatoire-title {
   font-size: 22px;
+  font-family: "ralewayregular";
 }
 
 #central-video {
@@ -83,7 +84,40 @@ body {
   margin: 0;
 }
 
+.video-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../images/video.svg");
+  background-size: 24px 24px;
+}
+
+.blinking {
+  visibility: hidden;
+  -webkit-animation: 1s blink ease infinite;
+  animation: 1s blink ease infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 video::-webkit-media-controls-panel {
+  display: -webkit-box !important;
   display: flex !important;
   opacity: 1 !important;
 }
@@ -94,6 +128,7 @@ button {
   margin-right: 5px;
   color: #fff;
   padding: 10px 20px 10px 20px;
+  -webkit-transition: background-color 80ms linear;
   transition: background-color 80ms linear;
 }
 
@@ -101,6 +136,7 @@ button:hover {
   background-color: #edf1f4;
   border: 1px solid #1a2856;
   color: #1a2856;
+  -webkit-transition: background-color 80ms linear;
   transition: background-color 80ms linear;
 }
 
@@ -115,12 +151,14 @@ button:active {
   color: #fff;
   padding: 5px 10px 5px 10px;
   margin-bottom: 5px;
+  -webkit-transition: background-color 500ms linear;
   transition: background-color 500ms linear;
 }
 
 #menu-gauche li:hover {
   background-color: #edf1f4;
   border: 1px solid #9c9fa6;
+  -webkit-transition: background-color 60ms linear;
   transition: background-color 60ms linear;
 }
 

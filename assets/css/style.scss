@@ -18,7 +18,7 @@ body {
 }
 
 .thales-title {
-    font-family: $font-titre;
+    font-family: $font-text;
     font-size: 18px;
     margin-left: 10px;
     font-weight: bold;
@@ -32,12 +32,75 @@ body {
 
 .mode-operatoire-title {
     font-size: 22px;
+    font-family: $font-text;
 }
 
 #central-video {
     padding: 0;
     margin: 0;
 }
+.video-icon {
+    display: block;
+    // text-indent: -9999px;
+    width: 24px;
+    height: 24px;
+    background: url("../images/video.svg");
+    background-size: 24px 24px;
+}
+
+.blinking {
+    visibility: hidden;
+    -webkit-animation: 1s blink ease infinite;
+    -moz-animation: 1s blink ease infinite;
+    -ms-animation: 1s blink ease infinite;
+    -o-animation: 1s blink ease infinite;
+    animation: 1s blink ease infinite;
+  }
+  
+  @keyframes "blink" {
+    from, to {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @-moz-keyframes blink {
+    from, to {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes "blink" {
+    from, to {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @-ms-keyframes "blink" {
+    from, to {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @-o-keyframes "blink" {
+    from, to {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
 
 video::-webkit-media-controls-panel {
     display: flex !important;
