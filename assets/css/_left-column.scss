@@ -1,0 +1,44 @@
+.mode-operatoire-title {
+    font-size: 22px;
+    font-family: $font-text;
+}
+
+/* The "mode opératoir" menu list */
+#menu-gauche {
+    /* Buttons */
+    li {
+        border: 1px solid $button-color;
+        background-color: $button-color;
+        margin-right: 5px;
+        color: $blanc;
+        padding: 5px 10px 5px 10px;
+        margin-bottom: 5px;
+        transition: background-color 500ms linear;
+        &:hover {
+            background-color: #edf1f4;
+            border: 1px solid $button-border;
+            transition: background-color 60ms linear;
+        }
+        &:active {
+            background-color: #9c9fa6;
+            color: $button-color;
+        }
+        a {
+            background-color: transparent;
+            color: $blanc;
+            &:hover {
+                color: $button-color;
+            }
+        }
+    }
+}
+
+/* SVG Video icon (the camera image) */
+.video-icon {
+    display: block;
+    // text-indent: -9999px;
+    width: 24px;
+    height: 24px;
+    background: url("../images/video.svg");
+    background-size: 24px 24px;
+}

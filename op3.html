@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
   <title>Thales Learning Hub</title>
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <script src="assets/js/jquery-3.3.1.min.js"></script>
@@ -52,7 +54,7 @@
                     <a href="#" id="2" class="videoControlButton">2. Sécher à l'air comprimé ou à l'azote</a>
                   </li>
                   <li>
-                    <a href="#" id="3" class="videoControlButton">3. Déposer le flux sur la connexion suivant MOG-xxx</a>
+                    <a href="#" id="3" class="videoControlButton">3. Déposer le flux sur la connexion suivant MOG-xxx <i class="video-icon"></i></a>
                   </li>
                   <li>
                     <a href="#" id="4" class="videoControlButton">4. Nettoyer la panne du fer sur une éponge humide</a>
@@ -61,29 +63,21 @@
                     <a href="#" id="5" class="videoControlButton">5. Déposer la panne du fer sur la pastille (côté brasures pour les piqués et les fils !).</a>
                   </li>
                   <li>
-                      <a href="#" id="6" class="videoControlButton">6. Laisser  chauffer  puis  faire  l’appoint  de  brasure  en
-                          déplaçant  le  fil  de  brasure  autour  de  la 
-                        connexion    jusqu’à  avoir  un  ménisque  correct  répond
-                        ant  aux  exigences  de  la  QFxxxx.</a>
+                    <a href="#" id="6" class="videoControlButton">6. Laisser chauffer puis faire l’appoint de brasure en déplaçant le fil de brasure autour de la connexion
+                      jusqu’à avoir un ménisque correct répond ant aux exigences de la QFxxxx. <i class="video-icon"></i></a>
                   </li>
                   <li>
-                      <a href="#" id="7" class="videoControlButton">7. Retirer le fil de brasure et la panne simultanément
-                          avec un angle de 45°. </a>
+                    <a href="#" id="7" class="videoControlButton">7. Retirer le fil de brasure et la panne simultanément avec un angle de 45°. </a>
                   </li>
                   <li>
-                      <a href="#" id="8" class="videoControlButton">8. Laisser refroidir. </a>
+                    <a href="#" id="8" class="videoControlButton">8. Laisser refroidir. </a>
                   </li>
                   <li>
-                      <a href="#" id="9" class="videoControlButton">9. Nettoyer suivant MOG-xxx. </a>
+                    <a href="#" id="9" class="videoControlButton">9. Nettoyer suivant MOG-xxx. </a>
                   </li>
-                  
+
                 </ul>
               </nav>
-            </div>
-            <div class="well">
-              <a href="index.html">
-                <button href="index.html" style="width: 100%">Table des matières</button>
-              </a>
             </div>
           </div>
 
@@ -114,16 +108,17 @@
                 </object>
                 <!-- Cercle rouge indicateur d'enregistrement ( masqué par défaut. Affiché uniquement quand on clique sur Start, masqué quand on clique sur Stop) -->
                 <svg height="100" width="100" class="blinking">
-                    <circle cx="50" cy="50" r="10" fill="red" />
-                    Sorry, your browser does not support inline SVG.  
-                </svg> 
+                  <circle cx="50" cy="50" r="10" fill="red" /> Sorry, your browser does not support inline SVG.
+                </svg>
               </div>
             </div>
             <p>
               <a href="index.html">
                 <button href="index.html">Table des matières</button>
               </a>
-              <button id="recbtn">Enregistrer une vidéo</button>
+              <button id="recbtn"><svg height="14" width="14">
+                <circle cx="7" cy="7" r="7" fill="red" />
+              </svg> Enregistrer une vidéo</button>
               <button id="startbtn">Start</button>
               <button id="stopbtn">Stop</button>
               <button id="revenirbtn">Revenir à la démonstration</button>
@@ -184,31 +179,15 @@
 
     //Définition des "blocs" de video
     let bloc1 = {
-      dsc: "1. Mesure de l'entraxe",
-      start: 0.0,
-      end: 9
+      start: 3
     };
 
     let bloc2 = {
-      dsc: "2. Reporter la valeur sur la réglette de formage",
-      start: 9,
-      end: 25
+      start: 10
     };
 
-    let bloc3 = {
-      dsc: "3. Mise en forme du compasant",
-      start: 36,
-      end: 52
-    };
-
-    let bloc4 = {
-      dsc: "4. Vérification de l'axe et test",
-      start: 53,
-      end: demoVideoDuration
-    };
-
-    // Menu addEventListeners
-    let startCursor, endCursor;
+    // AddEventListener sur tous les boutons du menu dans la colonne de gauche 
+    let startCursor;
 
     let vcbLength = videoControlButtons.length;
     for (let i = 0; i < vcbLength; i++) {
@@ -226,26 +205,15 @@
           } else if ($("#central-doc-pdfobject2").is(":visible")) {
             $("#central-doc-pdfobject2").hide();
           }
-
           $("#demovideofrm").show();
         }
 
         switch (this.id) {
-          case "1":
-            startCursor = bloc1.start;
-            endCursor = bloc1.end;
-            break;
-          case "2":
-            startCursor = bloc2.start;
-            endCursor = bloc2.end;
-            break;
           case "3":
-            startCursor = bloc3.start;
-            endCursor = bloc3.end;
+            startCursor = bloc1.start;
             break;
-          case "4":
-            startCursor = bloc4.start;
-            endCursor = bloc4.end;
+          case "6":
+            startCursor = bloc2.start;
             break;
         }
 

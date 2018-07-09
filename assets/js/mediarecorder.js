@@ -50,16 +50,16 @@ function onRecordingReady(e) {
 
 // Quand on clique sur le bouton "Enregistrer"
 $( "#recbtn" ).click(function() {
-  $("#recbtn").hide(); // Masque le boutton "Enregistrer"
-  $("#revenirbtn").show(); // Fais apparaitre le boutton "revenirbtn à la video"
-  $("#startbtn").show(); // Fais apparaitre le boutton "Start"
-  $("#stopbtn").show();  // Fais apparaitre le boutton "Stop"
-  $("#demovideofrm").hide(); // Masque la video de cours
-  $("#recvideofrm").hide(); // Masque la video enregistree
+  $("#recbtn").hide();  
+  $("#revenirbtn").show();  
+  $("#startbtn").show();  
+  $("#stopbtn").show();
+  $("#demovideofrm").hide();
+  $("#recvideofrm").hide();
   $("#central-doc-pdfobject").hide();
   $("#central-doc-pdfobject2").hide();
   $("#central-qf101-pdfobject").hide();
-  $("#livevideofrm").show(); // Fais appartaitre le live preview (avant l'enregistrement);
+  $("#livevideofrm").show();
 
   // On va chercher les flux audio et video de la webcam via navigator.mediaDevices.getUserMedia();
   navigator.mediaDevices.getUserMedia(videoParameters)

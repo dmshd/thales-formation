@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'ralewayregular';
   src: url("../fonts/raleway-regular-webfont.woff2") format("woff2"), url("../fonts/raleway-regular-webfont.woff") format("woff");
@@ -37,111 +38,14 @@
   margin-left: 7px;
 }
 
-.footer {
-  overflow: auto;
-  height: 50px;
-  width: 100%;
-}
-
-.footer p {
-  margin: 10px;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "ralewayregular";
-  font-size: 1em;
-}
-
-.vh-100 {
-  height: 100vh;
-  min-height: 100vh;
-}
-
-.thales-title {
-  font-family: "ralewayregular";
-  font-size: 18px;
-  margin-left: 10px;
-  font-weight: bold;
-}
-
-.chapter-title {
-  font-family: "montserratbold";
-  font-size: 25px;
-  margin-left: 30px;
-}
-
 .mode-operatoire-title {
   font-size: 22px;
   font-family: "ralewayregular";
 }
 
-#central-video {
-  padding: 0;
-  margin: 0;
-}
-
-.video-icon {
-  display: block;
-  width: 24px;
-  height: 24px;
-  background: url("../images/video.svg");
-  background-size: 24px 24px;
-}
-
-.blinking {
-  visibility: hidden;
-  -webkit-animation: 1s blink ease infinite;
-  animation: 1s blink ease infinite;
-}
-
-@keyframes "blink" {
-  from, to {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes "blink" {
-  from, to {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-video::-webkit-media-controls-panel {
-  display: -webkit-box !important;
-  display: flex !important;
-  opacity: 1 !important;
-}
-
-button {
-  border: 1px solid #1a2856;
-  background-color: #1a2856;
-  margin-right: 5px;
-  color: #fff;
-  padding: 10px 20px 10px 20px;
-  -webkit-transition: background-color 80ms linear;
-  transition: background-color 80ms linear;
-}
-
-button:hover {
-  background-color: #edf1f4;
-  border: 1px solid #1a2856;
-  color: #1a2856;
-  -webkit-transition: background-color 80ms linear;
-  transition: background-color 80ms linear;
-}
-
-button:active {
-  background-color: #9c9fa6;
+/* The "mode opératoir" menu list */
+#menu-gauche {
+  /* Buttons */
 }
 
 #menu-gauche li {
@@ -174,5 +78,162 @@ button:active {
 
 #menu-gauche li a:hover {
   color: #1a2856;
+}
+
+/* SVG Video icon (the camera image) */
+.video-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../images/video.svg");
+  background-size: 24px 24px;
+}
+
+/* The pdf objects are only shown when you click on a related button in the right column */
+/* MOG pdf <oject> */
+#central-doc-pdfobject {
+  display: none;
+}
+
+/* MOG pdf <oject> */
+#central-doc-pdfobject2 {
+  display: none;
+}
+
+/* QF 101 pdf <oject> */
+#central-qf101-pdfobject {
+  display: none;
+}
+
+/* Text element */
+.chapter-title {
+  font-family: "montserratbold";
+  font-size: 25px;
+  margin-left: 30px;
+}
+
+/* The videos elements */
+#central-video {
+  padding: 0;
+  margin: 0;
+}
+
+/* Trying to force the video controls to stay up on the video (they disappear after mouseOut */
+video::-webkit-media-controls-panel {
+  display: -webkit-box !important;
+  display: flex !important;
+  opacity: 1 !important;
+}
+
+/* Blinking red circle animation (recording) */
+.blinking {
+  visibility: hidden;
+  -webkit-animation: 1s blink ease infinite;
+  animation: 1s blink ease infinite;
+}
+
+@keyframes "blink" {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* UX Elements (The buttons) */
+button {
+  border: 1px solid #1a2856;
+  background-color: #1a2856;
+  margin-right: 5px;
+  color: #fff;
+  padding: 10px 20px 10px 20px;
+  -webkit-transition: background-color 80ms linear;
+  transition: background-color 80ms linear;
+}
+
+button:hover {
+  background-color: #edf1f4;
+  border: 1px solid #1a2856;
+  color: #1a2856;
+  -webkit-transition: background-color 80ms linear;
+  transition: background-color 80ms linear;
+}
+
+button:active {
+  background-color: #9c9fa6;
+}
+
+/* Bouton "Revenir à la démonstration" (default: hidden. Visible only when you display a pdf object or if you decide to record a video) */
+#revenirbtn {
+  display: none;
+}
+
+/* The live preview <video> element (appears when you click on "Enregistrer une video") */
+#livevideofrm {
+  display: none;
+}
+
+/* The recorded <video> element (appears when you click on "Stop".) */
+#recvideofrm {
+  display: none;
+}
+
+/* The start <button> element (appears when you click on "Enregistrer une video".) */
+#startbtn {
+  display: none;
+}
+
+/* The stop <button> element (appears when you click on "Enregistrer une video".)  */
+#stopbtn {
+  display: none;
+}
+
+/* The "Revoi" <button> let you see again what you recorded if you switched to another content  */
+#revoirbtn {
+  display: none;
+}
+
+/* MOG & QF 101 Titles (text element) */
+.thales-title {
+  font-family: "ralewayregular";
+  font-size: 18px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.footer {
+  overflow: auto;
+  height: 50px;
+  width: 100%;
+}
+
+.footer p {
+  margin: 10px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "ralewayregular";
+  font-size: 1em;
+}
+
+.vh-100 {
+  height: 100vh;
+  min-height: 100vh;
 }
 /*# sourceMappingURL=style.css.map */
