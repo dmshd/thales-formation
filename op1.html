@@ -140,21 +140,15 @@
 
     //Définition des "blocs" de video
     let bloc1 = {
-      dsc: "1. Mesure de l'entraxe",
-      start: 0.0,
-      end: 9
+      start: 0,
     };
 
     let bloc2 = {
-      dsc: "2. Reporter la valeur sur la réglette de formage",
-      start: 9,
-      end: 25
+      start: 9
     };
 
     let bloc3 = {
-      dsc: "3. Mise en forme du compasant",
-      start: 36,
-      end: 52
+      start: 36
     };
 
     let bloc4 = {
@@ -191,19 +185,15 @@
         switch (this.id) {
           case "1":
             startCursor = bloc1.start;
-            endCursor = bloc1.end;
             break;
           case "2":
             startCursor = bloc2.start;
-            endCursor = bloc2.end;
             break;
           case "3":
             startCursor = bloc3.start;
-            endCursor = bloc3.end;
             break;
           case "4":
             startCursor = bloc4.start;
-            endCursor = bloc4.end;
             break;
         }
 

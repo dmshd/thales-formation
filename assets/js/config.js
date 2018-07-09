@@ -1,8 +1,3 @@
-// Quand la page se charge
-// window.onload = function () {
-    //plus besoin de ça pour le moment
-// };
-
 // Bouton "start" démarre lenregistrement
 $( "#startbtn" ).click(function() {
   $(".blinking").css('visibility', 'visible');
