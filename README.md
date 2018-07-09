@@ -1,303 +1,173 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<style>
-@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+# Thales Formation
 
-body {
-    background: lightgray;
-}
+Une application support pour épauler les candidats dans leur apprentissage de la micro-soudure.
+Délivrée pendant et après le Hackathon "Hack'tion commando" dont les principaux acteurs fûrent : Heracles, X five, Connexences et Thales Alenia Space, Charleroi.
 
-.navbar-fixed-top {
-    top: 0;
-    border-width: 0 0 1px;
-}
+### Built With
 
-.navbar-default .navbar-nav #user-profile {
-    height: 50px;
-    padding-top: 15px;
-    padding-left: 58px;
-}
+* [Bootstrap](https://getbootstrap.com/) - The web framework used
+* HTML
+* CSS (SCSS)
+* JavaScript
 
-.navbar-default .navbar-nav #user-profile img {
-    height: 45px;
-    width: 45px;
-    position: absolute;
-    top: 2px;
-    left: 8px;
-    padding: 1px;
-}
+## Author
 
-#wrapper {
-    padding-top: 50px;
-    padding-left: 0;
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
-}
+* **Daniel Muyshond** - * - [dmshd](https://github.com/dmshd)
 
-@media (min-width: 992px) {
-    #wrapper {
-        padding-left: 225px;
+
+## License
+
+This project is licensed under the Apache license - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Using Bootstrap for starting the project et deliver a template.
+* Using JavaScript to create the functionnality that Jump to a specific time on the video.
+* Using JavaScript to get the video stream from the webcam
+* Record a video locally stored 
+* Replay that video 
+* Embedding PDF objects in the page
+* Display ZOOM 100% that pdf
+* handling jQuery hide / show & the difference with CSS visibility property ( hidden / visible )
+* General UX improvements (buttons / hide & shows )
+
+## Spécificités techniques et déploiement
+
+`index.html` contient la table de matières.  
+Chaque éléménent de la table des matières redirige vers un chapitre (une page web nomée `op1.html`, `op2.html` ou `op3.html`)
+On peut aisément ajouter un chapitre en dupliquant une page HTML `op-.html` comme base et en modifiant simplement le code HTML.
+
+
+
+### Menu mode opératoire
+
+```HTML
+<ul class="nav" id="menu-gauche">
+    <li>
+    <a href="#" id="1" class="videoControlButton">1. Mesure de l'entraxe
+        <i class="video-icon"></i>
+    </a>
+    </li>
+    <li>
+    <a href="#" id="2" class="videoControlButton"> 2. Reporter la valeur sur la réglette de formage
+        <i class="video-icon"></i>
+    </a>
+    </li>
+    <li>
+    <a href="#" id="3" class="videoControlButton">3. Mise en forme du composant
+        <i class="video-icon"></i>
+    </a>
+    </li>
+    <li>
+    <a href="#" id="4" class="videoControlButton">4. Vérifier l'axe et tester
+        <i class="video-icon"></i>
+    </a>
+    </li>
+</ul>
+```
+
+#### Modifier le menu - ajouter un élément
+
+Ajouter un élément un créant un nouvel élément de liste `li`.
+Conserver un nom de class `videoControlButton` pour chaque élément ainsi qu'un `id` unique pour chaque élément. (numéroté et incrémenté dans l'odre croissant) L'`id` sert à créér des liens vers une portion de vidéo.
+
+#### Modifier le menu - cibler une portion de vidéo  
+
+##### Définir les blocs de vidéo
+En bas de chaque page HTML entre les balises `<script>` sont définis des blocs sous la forme :  
+```javascript
+let bloc2 = {
+      start: 9
+    };
+```  
+la valeur de start représente la seconde de la vidéo à laquelle de liens doit pointer. Cela permet de créer des liens pointant vers une partie précise de la vidéo (pratique si la vidéo est longue). L'utilisateur peut revoir uniquement l'étape qu'il souhaite revoir et ne dois pas naviguer à travers l'ensemble du film.
+
+##### Définir quel lien pointe vers quel bloc
+
+à la suite de cette portion de code, toujours dans la balise `<script>`, en bas de la page HTML, une boucle switch passe en revue tous les boutons présents dans le menu de gauche (mode opératoire), si chaque élément de ce menu a bien un attribut `id` unique définit dans le HTML, il suffit de choisir quel élément du menu (via son `id` unique) pointe vers quel bloc préalablement défini.
+
+```javascript 
+let bloc1 = {
+      start: 0,
+    };
+
+    let bloc2 = {
+      start: 9
+    };
+
+    let bloc3 = {
+      start: 36
+    };
+
+    let bloc4 = {
+      start: 53,
+    };
+
+switch (this.id) {
+          case "1":
+            startCursor = bloc1.start;
+            break;
+          case "2":
+            startCursor = bloc2.start;
+            break;
+          case "3":
+            startCursor = bloc3.start;
+            break;
+          case "4":
+            startCursor = bloc4.start;
+            break;
     }
-}
+    demoVideo.currentTime = startCursor;
+    demoVideo.play();
+```
+Donc si je clique sur le bouton du menu ayant dans son code HTML l'attribut `id="3"` ce qui dans `op1.html` correspont à `3. Mise en forme du composant` le lien déplacera le curseur de la vidéo à la seconde 36 définie dans :  
 
-@media (min-width: 992px) {
-    #wrapper #sidebar-wrapper {
-        width: 225px;
-    }
-}
+```javascript
+let bloc3 = {
+      start: 36
+    };
+```
 
-#sidebar-wrapper {
-    border-right: 1px solid #e7e7e7;
-}
+### MOG et QF101
+sont intégrés dans la page en HTML via les balises `<object>`. Les PDF sont localisés dans les dossiers `assets/MOGs` et `assets/QF101` du projet.  
 
-#sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
-    left: 225px;
-    width: 0;
-    height: 100%;
-    margin-left: -225px;
-    overflow-y: auto;
-    background: #f8f8f8;
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
+```html
+<object rel="preload" id="central-doc-pdfobject" class="embed-responsive-item" data="assets/MOGs/MOG-op2-report_de_composants_axiaux.pdf#zoom=100"
+    type="application/pdf" internalinstanceid="9" title="">
+    <p>Your browser isn't supporting embedded pdf files. You can download the file
+        <a href="assets/MOGs/MOG-op2-report_de_composants_axiaux.pdf">here</a>.</p>
+</object>
+```
+Ces éléments ont un `id` afin de pouvoir les manipuler (ici `central-doc-pdfobject`). Ils sont masqués au chargement dans les styles `CSS`  via: 
+```CSS
+#central-doc-pdfobject {
+  display: none;
 }
+```
+voir `assets/css/style.css`.
 
-#sidebar-wrapper .sidebar-nav {
-    position: absolute;
-    top: 0;
-    width: 225px;
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+### Comment sont affichés / masqués chaque élément
 
-#sidebar-wrapper .sidebar-nav li {
-    text-indent: 0;
-    line-height: 45px;
-}
+Chaque élément est affiché ou masqué en jQuery via les méthodes `.show()` et `.hide()`. Voir `assets/js/config.js` pour les boutons `Start`, `Stop`, `Revoir l'enregistrement`, `Revenir à la démonstration` ainsi que les boutons `MOG` et `QF101` mais également `assets/js/mediarecorder.js` pour le bouton `Enregistrer une video`.
 
-#sidebar-wrapper .sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #428bca;
-}
+Par exemple :  
 
-.sidebar-nav li:first-child a {
-    background: #92bce0 !important;
-    color: #fff !important;
-}
-
-#sidebar-wrapper .sidebar-nav li a .sidebar-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 14px;
-    padding: 0 2px;
-    display: inline-block;
-    text-indent: 7px;
-    margin-right: 10px;
-    color: #fff;
-    float: left;
-}
-
-#sidebar-wrapper .sidebar-nav li a .caret {
-  position: absolute;
-  right: 23px;
-  top: auto;
-  margin-top: 20px;
-}
-
-#sidebar-wrapper .sidebar-nav li ul.panel-collapse {
-    list-style: none;
-    -moz-padding-start: 0;
-    -webkit-padding-start: 0;
-    -khtml-padding-start: 0;
-    -o-padding-start: 0;
-    padding-start: 0;
-    padding: 0;
-}
-
-#sidebar-wrapper .sidebar-nav li ul.panel-collapse li i {
-    margin-right: 10px;
-}
-
-#sidebar-wrapper .sidebar-nav li ul.panel-collapse li {
-    text-indent: 15px;
-}
-
-@media (max-width: 992px) {
-    #wrapper #sidebar-wrapper {
-        width: 45px;
-    }
-    #wrapper #sidebar-wrapper #sidebar #sidemenu li ul {
-        position: fixed;
-        left: 45px;
-        margin-top: -45px;
-        z-index: 1000;
-        width: 200px;
-        height: 0;
-    }
-}
-
-.sidebar-nav li:first-child a {
-    background: #92bce0 !important;
-    color: #fff !important;
-}
-
-.sidebar-nav li:nth-child(2) a {
-    background: #6aa3d5 !important;
-    color: #fff !important;
-}
-
-.sidebar-nav li:nth-child(3) a {
-    background: #428bca !important;
-    color: #fff !important;
-}
-
-.sidebar-nav li:nth-child(4) a {
-    background: #3071a9 !important;
-    color: #fff !important;
-}
-
-.sidebar-nav li:nth-child(5) a {
-    background: #245682 !important;
-    color: #fff !important;
-}
-</style>
-<!------ Include the above in your HEAD tag ---------->
-</head>
-<body>
-    <div id="navbar-wrapper">
-        <header>
-            <nav class="navbar bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="navbar-collapse collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="javascript:void(0)">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="javascript:void(0)">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="javascript:void(0)">Link</a>
-      </li>    
-    </ul>
-  </div>  
-</nav>
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">Sidebar Template</a>
-                    </div>
-                    <div id="navbar-collapse" class="collapse navbar-collapse">
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                                </span>
-                            </div>
-                        </form>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a id="flag" href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="http://www.country-dialing-codes.net/img/png-country-4x2-fancy-res-1280x960/gb.png" alt="English" width="28px" height="18px">
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-flag" role="menu">
-                                    <li>
-                                        <a href="#">
-                                            <img src="http://www.country-dialing-codes.net/img/png-country-4x2-flat-res-640x480/gf.png" alt="Français" width="28px" height="18px">
-                                            <span>Français</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a id="user-profile" href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://lorempixel.com/100/100/people/9/" class="img-responsive img-thumbnail img-circle"> Username</a>
-                                <ul class="dropdown-menu dropdown-block" role="menu">
-                                    <li><a href="#">Profil edition</a></li>
-                                    <li><a href="#">Admin</a></li>
-                                    <li><a href="#">Logout</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    </div>
-    <div id="wrapper">
-        <div id="sidebar-wrapper">
-            <aside id="sidebar">
-                <ul id="sidemenu" class="sidebar-nav">
-                    <li>
-                        <a href="#">
-                            <span class="sidebar-icon"><i class="fa fa-dashboard"></i></span>
-                            <span class="sidebar-title">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
-                            <span class="sidebar-icon"><i class="fa fa-users"></i></span>
-                            <span class="sidebar-title">Management</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Users</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Roles</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-3">
-                            <span class="sidebar-icon"><i class="fa fa-newspaper-o"></i></span>
-                            <span class="sidebar-title">Blog</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul id="submenu-3" class="panel-collapse collapse panel-switch" role="menu">
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Posts</a></li>
-                            <li><a href="#"><i class="fa fa-caret-right"></i>Comments</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="sidebar-icon"><i class="fa fa-database"></i></span>
-                            <span class="sidebar-title">Data</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="sidebar-icon"><i class="fa fa-terminal"></i></span>
-                            <span class="sidebar-title">Console</span>
-                        </a>
-                    </li>
-                </ul>
-            </aside>            
-        </div>
-        <main id="page-content-wrapper" role="main">
-        </main>
-    </div> 
-</body>
-</html>
+```javascript
+// Quand on clique sur le bouton dont l' attribut id dans le HTML est "revenirbtn" (ce qui correspont au bouton "Revenir à la démonstration")
+$( "#revenirbtn" ).click(function() {
+  $("#recbtn").show(); //On affiche le bouton "Enregistrer"
+  $("#revenirbtn").hide();  //On cache le bouton "Revenir à la démonstration"
+  $("#startbtn").hide(); //On cache le bouton "Start" (qui sert à démarrer l'enregistrement)
+  $("#stopbtn").hide(); //On cache le bouton "Stop" (qui sert à arrêter l'enregistrement)
+  $("#revoirbtn").hide(); //On cache le bouton "Revoir l'enregistrement" (revoir la vidéo enregistrée)
+  $("#livevideofrm").hide(); //On cache la balise <video> utilisée pour le live preview
+  $("#recvideofrm").hide(); //On cache la balive <video> utilisée pour voir ce qui a été enregistré
+  $("#demovideofrm").show(); //On réaffiche la <video> Thales
+  $("#central-doc-pdfobject").hide(); //On cache le pdf
+  $("#central-doc-pdfobject2").hide(); //On cache le pdf2
+  $("#central-qf101-pdfobject").hide(); //On cache le pdf QF101
+  //On redémarre la lecture
+  videoElement.play();
+});
+```
+Si on crée de nouveaux éléments `<object>` pour afficher des pdf ou de nouveaux `<button>`, il faudra s'assurer de leur état (affiché ou masqué) en fonction de où l'utilisateur se situe / ce dont il a besoin de voir.
