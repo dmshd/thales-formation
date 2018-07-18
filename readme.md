@@ -3,6 +3,8 @@
 Une application support pour épauler les candidats dans leur apprentissage de la micro-soudure.
 Délivrée pendant et après le Hackathon "Hack'tion commando" dont les principaux acteurs fûrent : Heracles, X five, Connexences et Thales Alenia Space, Charleroi.
 
+![Screenshot_thales_learning_hub](http://daniel.muyshond.be/thales/thales_learning_hub_small.png)
+
 ### Built With
 
 * [Bootstrap](https://getbootstrap.com/) - The web framework used
