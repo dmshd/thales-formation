@@ -1,6 +1,7 @@
 # Thales Formation
 
 **Attention, ce projet fonctionne parfaitement sur Firefox uniquement. Ayant été  délivré pendant et à la suite d'un Hackathon, l'accessibilité n'était pas l'objectif principal. Il se peut que les vidéos mettent du temps à charger car elles sont hébergées sur un hébergement n'étant pas prévu pour et ne sont absolument pas optimisées pour le Web. L'application devrait être déployée en local et en interne sur l'intranet Thales, sur des raspberry Pi et sur Firefox.**  
+  
 Une application support pour épauler les candidats dans leur apprentissage de la micro-soudure.
 Délivrée pendant et après le Hackathon "Hack'tion commando" dont les principaux acteurs fûrent : Heracles, X five, Connexences et Thales Alenia Space, Charleroi.
 
